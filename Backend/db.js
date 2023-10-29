@@ -1,5 +1,9 @@
 const mongoose = require('mongoose');
-const mongoURI = "mongodb://127.0.0.1:27017/myNotebook?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.6.1"
+const dotenv = require('dotenv');
+
+dotenv.config();
+
+const mongoURI = process.env.MONGO_URI
  
 const connectToMongo = () =>{
     mongoose.set('strictQuery', true);
